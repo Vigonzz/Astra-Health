@@ -1,1 +1,1 @@
-console.log('body.js loaded')
+console.log('storage.js loaded')

@@ -1,1 +1,1 @@
-console.log('body.js loaded')
+console.log('chart.js loaded')
