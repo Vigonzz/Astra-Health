@@ -1,0 +1,29 @@
+:root {
+    --status-ok: #1cfc03;
+    --status-warn: #fcd303;
+    --status-alert: #fc0324;
+}
+
+#body-figure {
+    display: grid;
+    padding: 30px;
+    gap: 20px;
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "body-figure"
+    "Dashboard"
+    "detail-panel";
+}
+
+/* For desktop and for tablets */
+
+@media (min-width: 760px) {
+    #body-figure {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+        "dashboard  detail-panel"
+        "body-figure";
+    }
+}
