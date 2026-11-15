@@ -2,13 +2,23 @@ import { loadIndicators, getStatus } from './indicators.js'
 import './body.js'
 import './charts.js'
 import './storage.js'
+import { getEntries } from './storage.js'
 import './spaceweather.js'
 import './dashboard.js'
 import './header.js'
 import { renderCards } from './dashboard.js'
 
+
+// Get the saved list made in form
 const indicators = await loadIndicators();
 console.log(indicators);
+
+const entries = getEntries()
+
+// Grab the newest entry
+const latest = entries[entries.length - 1];
+
+
 
 // Loading call
 console.log('app.js loaded')
@@ -30,4 +40,8 @@ const sampleReadings = {
 };
 
 // Call renderCards
-renderCards(indicators, sampleReadings)
+if (latest) {
+  renderCards(indicators, latest.readings)
+} else {
+  renderCards(indicators, sampleReadings)
+}

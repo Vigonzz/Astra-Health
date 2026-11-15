@@ -1,7 +1,9 @@
 import './header.js'
 import { loadIndicators } from './indicators.js'
+import { getEntries } from './storage.js';
+import { saveEntry } from './storage.js';
 
-console.log('form.js loaded')
+console.log('form.js loaded');
 
 // Load the indicators
 const indicators = await loadIndicators();
@@ -22,6 +24,7 @@ for (const indicator of indicators) {
         input.id = fieldId;
         input.name = fieldId;
         input.step = 'any';
+        input.required = true
 
         // Creating the label
         const label = document.createElement('label');
@@ -32,3 +35,31 @@ for (const indicator of indicators) {
         form.insertBefore(input, submitBtn);
     }
 }
+
+// Add event listener
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // The empty entry
+    const entry = { 
+    date: new Date().toISOString(),
+    readings: {}
+    };
+
+    for (const indicator of indicators) {
+        for (const part of indicator.parts) {
+            // Rebuild the id
+            const fieldId = `${indicator.id}-${part.key}`;
+            const input = document.getElementById(fieldId);
+            // convert the input to a num
+            const value = Number(input.value);
+
+            if (!entry.readings[indicator.id]) {
+                entry.readings[indicator.id] = {};
+            }
+            entry.readings[indicator.id][part.key] = value;
+        }
+    }
+    saveEntry(entry);
+    window.location.href = 'dashboard.html';
+});
