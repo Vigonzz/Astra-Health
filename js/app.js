@@ -4,6 +4,7 @@ import './charts.js'
 import './storage.js'
 import './spaceweather.js'
 import './dashboard.js'
+import './header.js'
 import { renderCards } from './dashboard.js'
 
 const indicators = await loadIndicators();

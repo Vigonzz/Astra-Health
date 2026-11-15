@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Astra Health</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="icon" href="data:,">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+    </head>
+    <body> 
+        <header>
+            <a href="index.html">
+                <img id="logo" src="./assets/logo.png"  alt="Logo with the name Astra Health. The design is a heart">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Health Dashboard</a></li>
+                    <li><a href="form.html">Health Form</a></li>
+                </ul>
+            </nav>
+            Welcome,<span id="astronaut-name"></span>
+        </header>
+        
+        <main>
+            <h2>Daily Health Check</h2>
+            <form id="health-form"><button id="health-btn">Submit</button></form>
+
+        </main>
+
+        <footer>
+            The content throughout this website is not for medical purposes. If you believe you are having a medical emergency please call
+            your emergency hotline. The purpose of this website is for the NASA space apps challenge. Code was written by dev with 
+            explanations, debugging, review and short snippets from Claude (Anthropic). 
+            Indicator data (indicators.json) was drafted by Claude from cited NASA, ESA and peer-reviewed sources.
+        </footer>
+        <script type="module" src="./js/form.js"></script>
+    </body>
+</html>
