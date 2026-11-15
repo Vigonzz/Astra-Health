@@ -9,6 +9,13 @@ export function renderCards(indicators, readings) {
     // Clear it
     dashboard.innerHTML = ''
 
+    // Label for each status
+    const labels = {
+        ok: 'Normal',
+        warn: 'Monitor',
+        alert: 'Alert',
+    };
+
     // Loop over the indicators 
     for (const indicator of indicators) {
         // Get the readings
@@ -31,8 +38,19 @@ export function renderCards(indicators, readings) {
             displayValue = reading.value;
         }
 
-        // Testing:
-        console.log(indicator.name, status, displayValue);
+        // Creating the button element
+        const card = document.createElement('button');
+
+        // Give it classes
+        card.className = `card status-${status}`;
+
+        // Data-id a hidden name tag
+        card.dataset.id = indicator.id
+        // Render button cards
+        card.innerHTML = `<span class="card-name">${indicator.name}</span><span class="card-value"> ${displayValue} ${indicator.unit}</span><span class="card-status"> ${labels[status]}</span>`;
+;
+
+        dashboard.appendChild(card);
     }
 
 }
