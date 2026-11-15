@@ -1,0 +1,151 @@
+{
+  "_note": "Prototype ranges for a hackathon demo, not medical guidance. Bands: min is inclusive, max is exclusive, null = no limit. First matching band wins.",
+  "indicators": [
+    {
+      "id": "heart_rate",
+      "name": "Resting heart rate",
+      "unit": "bpm",
+      "zone": "heart",
+      "frequency": "Daily (morning)",
+      "measure": "Use the chest strap or wrist monitor, or count your pulse for 60 seconds. Measure after 5 minutes at rest, before exercise.",
+      "effect": "About 2 liters of fluid shift toward the head in microgravity, changing how the heart is loaded. The heart can shrink over long missions, and dizziness or fainting on return to gravity is a key risk.",
+      "hazards": ["Gravity Fields"],
+      "parts": [
+        { "key": "value", "label": "Heart rate", "bands": [
+          { "status": "alert", "min": null, "max": 50 },
+          { "status": "warn",  "min": 50,   "max": 60 },
+          { "status": "ok",    "min": 60,   "max": 101 },
+          { "status": "warn",  "min": 101,  "max": 121 },
+          { "status": "alert", "min": 121,  "max": null }
+        ]}
+      ],
+      "actions": {
+        "warn": "Rest 10 minutes and re-measure. Hydrate, and review your exercise load and sleep.",
+        "alert": "If resting heart rate stays in the red on re-check, or you have palpitations, chest pain or fainting, contact the flight surgeon."
+      },
+      "sources": ["S1", "S2"]
+    },
+    {
+      "id": "blood_pressure",
+      "name": "Blood pressure",
+      "unit": "mmHg",
+      "zone": "heart",
+      "frequency": "Daily (morning)",
+      "measure": "Use the automatic arm cuff while seated and restrained, arm at heart level. Take two readings 1 minute apart and log the average.",
+      "effect": "24-hour blood pressure tends to drop about 10 mmHg in long-duration flight as blood vessels dilate. Arteries also stiffen faster than on Earth, and low blood pressure on landing is common.",
+      "hazards": ["Gravity Fields"],
+      "parts": [
+        { "key": "systolic", "label": "Systolic", "bands": [
+          { "status": "alert", "min": null, "max": 80 },
+          { "status": "warn",  "min": 80,   "max": 90 },
+          { "status": "ok",    "min": 90,   "max": 130 },
+          { "status": "warn",  "min": 130,  "max": 140 },
+          { "status": "alert", "min": 140,  "max": null }
+        ]},
+        { "key": "diastolic", "label": "Diastolic", "bands": [
+          { "status": "warn",  "min": null, "max": 50 },
+          { "status": "ok",    "min": 50,   "max": 80 },
+          { "status": "warn",  "min": 80,   "max": 90 },
+          { "status": "alert", "min": 90,   "max": null }
+        ]}
+      ],
+      "actions": {
+        "warn": "Re-measure after resting. Check your fluid and sodium intake. Flag the trend if you're in yellow 3 days in a row.",
+        "alert": "Two consecutive red readings, or low blood pressure with dizziness, headache or vision changes: contact the flight surgeon."
+      },
+      "sources": ["S2", "S3", "S4"]
+    },
+    {
+      "id": "blood_glucose",
+      "name": "Blood glucose (fasting)",
+      "unit": "mg/dL",
+      "zone": "abdomen",
+      "frequency": "Every 3 days (daily with a CGM)",
+      "measure": "Use the finger-stick glucose meter or continuous glucose monitor before breakfast.",
+      "effect": "Astronauts develop insulin resistance in flight. In the Canadian Vascular study, fasting insulin and insulin resistance rose in every astronaut measured, linked to less physical loading between exercise sessions.",
+      "hazards": ["Gravity Fields", "Hostile Closed Environment"],
+      "parts": [
+        { "key": "value", "label": "Glucose", "bands": [
+          { "status": "alert", "min": null, "max": 54 },
+          { "status": "warn",  "min": 54,   "max": 70 },
+          { "status": "ok",    "min": 70,   "max": 100 },
+          { "status": "warn",  "min": 100,  "max": 126 },
+          { "status": "alert", "min": 126,  "max": null }
+        ]}
+      ],
+      "actions": {
+        "warn": "If high, check your diet log and exercise minutes. If low, eat 15 g of fast-acting carbs and re-test in 15 minutes.",
+        "alert": "Fasting glucose of 126 or more on two tests, or below 54 or any low with confusion: contact the flight surgeon."
+      },
+      "sources": ["S5", "S6"]
+    },
+    {
+      "id": "body_temp",
+      "name": "Core body temperature",
+      "unit": "°C",
+      "zone": "torso",
+      "frequency": "Daily",
+      "measure": "Use the forehead or ear thermometer at rest. Don't measure within 30 minutes after exercise.",
+      "effect": "Resting core temperature rises about 1 °C over the first 2 to 3 months in space, because body heat and sweat don't dissipate without air convection. During exercise it can exceed 40 °C. Ranges here are adjusted for that higher space baseline.",
+      "hazards": ["Gravity Fields", "Hostile Closed Environment"],
+      "parts": [
+        { "key": "value", "label": "Temperature", "bands": [
+          { "status": "alert", "min": null, "max": 35.5 },
+          { "status": "warn",  "min": 35.5, "max": 36.5 },
+          { "status": "ok",    "min": 36.5, "max": 38.0 },
+          { "status": "warn",  "min": 38.0, "max": 38.5 },
+          { "status": "alert", "min": 38.5, "max": null }
+        ]}
+      ],
+      "actions": {
+        "warn": "Move near a ventilation fan, hydrate, lower exercise intensity, and re-measure in 1 hour.",
+        "alert": "Red at rest on re-check, or fever with other symptoms (possible infection; immune function changes in flight): contact the flight surgeon."
+      },
+      "sources": ["S7", "S8"]
+    },
+    {
+      "id": "sleep",
+      "name": "Sleep duration",
+      "unit": "hours",
+      "zone": "head",
+      "frequency": "Daily (on waking)",
+      "measure": "Read last night's total from your wrist actigraph, or estimate it when you wake up.",
+      "effect": "NASA schedules 8.5 hours of sleep, but astronauts average about 6. Sixteen sunrises a day, noise and microgravity all disrupt sleep, and sleep loss lowers alertness and performance.",
+      "hazards": ["Isolation & Confinement", "Hostile Closed Environment"],
+      "parts": [
+        { "key": "value", "label": "Sleep", "bands": [
+          { "status": "alert", "min": null, "max": 5 },
+          { "status": "warn",  "min": 5,    "max": 7 },
+          { "status": "ok",    "min": 7,    "max": null }
+        ]}
+      ],
+      "actions": {
+        "warn": "Dim lights an hour before sleep, limit screens, keep a consistent sleep schedule, and request a quiet period.",
+        "alert": "Ongoing sleep loss that affects task performance, or needing sleep medication most nights: talk to the flight surgeon."
+      },
+      "sources": ["S9", "S10"]
+    },
+    {
+      "id": "mood",
+      "name": "Mood",
+      "unit": "/ 5",
+      "zone": "head",
+      "frequency": "Daily (evening)",
+      "measure": "Rate your mood from 1 (very low) to 5 (great). Add a note if you like.",
+      "effect": "Isolation, confinement, distance from Earth and communication delays all strain behavioral health on long missions.",
+      "hazards": ["Isolation & Confinement", "Distance from Earth"],
+      "parts": [
+        { "key": "value", "label": "Mood", "bands": [
+          { "status": "alert", "min": null, "max": 2 },
+          { "status": "warn",  "min": 2,    "max": 4 },
+          { "status": "ok",    "min": 4,    "max": null }
+        ]}
+      ],
+      "actions": {
+        "warn": "Schedule a private family call or recreation time, talk with a crewmate, or try a journaling prompt.",
+        "alert": "A rating of 1, or low mood for several days: request a private conference with the flight surgeon or psychologist."
+      },
+      "sources": []
+    }
+  ]
+}
