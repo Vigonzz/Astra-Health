@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/landing.css"
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
     <body> 
         <header>
             <a href="index.html">
-                <img id="logo" src="./assets/logo.png"  alt="Logo with the name Astra Health. The design is a heart">
+                <img id="logo" src="./assets/logo.png"  alt="Logo with the name Astra Health. The design is a heart with a ring around it">
             </a>
             <nav>
                 <ul>
@@ -31,26 +32,22 @@
         
         <main>
             <div class="Welcom-panel">
-                <h2 id="Welcome-astro">Welcome Astronaut</h2>
-                <p>To get started on your health evaluation please declare who you are to then fill out a health form</p>
+                <img class="mascot" src="./assets/cat.png" alt="Cat mascot wearing an Astronaut suite">
+                <div class="panel">
+                    <h2 id="Welcome-astro">Welcome Astronaut</h2>
+                    <p>To get started on your health evaluation please declare who you are to then fill out a health form</p>
 
-                <div id="welcome-buttons">
-                    <form id="start-form">
-                        <label for="callsign">Enter Name:<input id="callsign"></label>
-                        <button id="start-btn" type="submit">Start</button>
-                    </form>
+                    <div id="welcome-buttons">
+                        <form id="start-form">
+                            <label for="callsign">Enter Name:<input id="callsign"></label>
+                            <button id="start-btn" type="submit">Start</button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
             <div id="body-figure"></div>
 
-            <div id="dashboard"></div>
-
-            <div id="detail-panel"></div>
-
-            <div id="space-weather"></div>
-
-            <dialog id="log-dialog"></dialog>
         </main>
 
         <footer>
@@ -59,7 +56,6 @@
             explanations, debugging, review and short snippets from Claude (Anthropic). 
             Indicator data (indicators.json) was drafted by Claude from cited NASA, ESA and peer-reviewed sources.
         </footer>
-
         <script type="module" src="js/landing.js"></script>
         <script type="module" src="js/app.js"></script>
     </body>

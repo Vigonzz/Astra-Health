@@ -90,6 +90,19 @@
     padding: 0;
 }
 
+.zone.status-ok    { 
+    border-color: #088204;    
+    box-shadow: 0 0 10px #088204; 
+}
+.zone.status-warn  { 
+    border-color: var(--status-warn);  
+    box-shadow: 0 0 10px var(--status-warn); 
+}
+.zone.status-alert { 
+    border-color: var(--status-alert); 
+    box-shadow: 0 0 14px var(--status-alert); 
+}
+
 .zone[data-zone="head"]    { left: 49%; top: 15%; }
 .zone[data-zone="heart"]   { left: 56%; top: 44%; }
 .zone[data-zone="abdomen"] { left: 49%; top: 52%; }

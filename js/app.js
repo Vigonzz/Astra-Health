@@ -1,4 +1,5 @@
 import { loadIndicators, getStatus } from './indicators.js'
+import { colorZones } from './body.js'
 import './body.js'
 import './charts.js'
 import './storage.js'
@@ -39,9 +40,7 @@ const sampleReadings = {
   mood:           { value: 4 },
 };
 
-// Call renderCards
-if (latest) {
-  renderCards(indicators, latest.readings)
-} else {
-  renderCards(indicators, sampleReadings)
-}
+const readings = latest ? latest.readings : sampleReadings;
+
+renderCards(indicators, readings);
+colorZones(indicators, readings)

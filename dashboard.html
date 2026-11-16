@@ -31,25 +31,36 @@
         </header>
         <main>
             <h2 id="dash">Health Dashboard</h2>
-            <div class="body-wrap">
-                <img alt="Figure of a body (outline)" src="./assets/body.png">
-                <button class="zone" data-zone="head" aria-label="Head: sleep and mood"></button>
-                <button class="zone" data-zone="heart" aria-label="Heart: heart rate and blood pressure"></button>
-                <button class="zone" data-zone="abdomen" aria-label="Abdomen: blood glucose"></button>
-                <button class="zone" data-zone="arm" aria-label="Arm: body temperature"></button>
-            </div>
             <div class="dash-layout">
                 <div id="dashboard"></div>
-                <div id="body-figure"></div>
+
+                <div id="body-figure">
+                    <p class="body-hint">Tap any circle for relevant body information</p>
+                    <div class="body-wrap">
+                        <img alt="Figure of a body (outline)" src="./assets/body.png">
+                        <button class="zone" data-zone="head" aria-label="Head: sleep and mood"></button>
+                        <button class="zone" data-zone="heart" aria-label="Heart: heart rate and blood pressure"></button>
+                        <button class="zone" data-zone="abdomen" aria-label="Abdomen: blood glucose"></button>
+                        <button class="zone" data-zone="arm" aria-label="Arm: body temperature"></button>
+                    </div>
+                </div>
             </div>
-            
             <div id="detail-panel"></div>
 
             <div id="space-weather"></div>
 
-            <dialog id="log-dialog"></dialog>
+            <dialog id="zone-dialog">
+                <div id="zone-content"></div>
+                <button id="zone-close">Close</button>
+            </dialog>
         </main>
 
+        <footer>
+            The content throughout this website is not for medical purposes. If you believe you are having a medical emergency please call
+            your emergency hotline. The purpose of this website is for the NASA space apps challenge. Code was written by the dev with 
+            explanations, debugging, review and short snippets from Claude (Anthropic). 
+            Indicator data (indicators.json) was drafted by Claude from cited NASA, ESA and peer-reviewed sources.
+        </footer>
         <script type="module" src="js/app.js"></script>
     </body>
 </html>

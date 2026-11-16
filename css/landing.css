@@ -1,0 +1,16 @@
+.Welcom-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.mascot {
+    max-width: 300px;
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    .Welcom-panel { flex-direction: column; }
+}

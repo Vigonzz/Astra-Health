@@ -76,3 +76,72 @@ button, input, textarea, select {
     max-width: 150px;
     max-height: 150px;
 }
+
+.panel {
+    background: var(--bg-dark);
+    border: 2px dashed var(--text);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 480px;
+    margin: 2rem auto;
+}
+
+#health-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input {
+    background: var(--accent);
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem;
+    color: var(--bg-dark);
+    margin-bottom: 0.75rem;
+}
+
+button[type="submit"], #zone-close {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#start-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#start-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label { 
+    color: var(--text-soft); 
+}
+
+main h2 { 
+    text-align: center; 
+}
+
+.mascot {
+    width: 500px;
+    height: auto;
+}
+
+
+footer {
+    background-color: var(--bg-dark);
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
+    color: var(--text-soft);
+}
