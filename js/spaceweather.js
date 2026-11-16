@@ -1,1 +1,1 @@
-console.log('spaceweather.js loaded')
+console.log('spaceweather.js?v=2 loaded')

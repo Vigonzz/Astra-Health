@@ -1,7 +1,7 @@
-console.log('indicators.js loaded')
+console.log('indicators.js?v=2 loaded')
 
 export async function loadIndicators() {
-    const response = await fetch('data/indicators.json');
+    const response = await fetch('data/indicators.json?v=2');
     // Turn it into JS data
     const data = await response.json();
     return data.indicators;

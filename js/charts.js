@@ -1,1 +1,1 @@
-console.log('chart.js loaded')
+console.log('chart.js?v=2 loaded')

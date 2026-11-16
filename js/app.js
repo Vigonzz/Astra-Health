@@ -1,13 +1,13 @@
-import { loadIndicators, getStatus } from './indicators.js'
-import { colorZones } from './body.js'
-import './body.js'
-import './charts.js'
-import './storage.js'
-import { getEntries } from './storage.js'
-import './spaceweather.js'
-import './dashboard.js'
-import './header.js'
-import { renderCards } from './dashboard.js'
+import { loadIndicators, getStatus } from './indicators.js?v=2'
+import { colorZones } from './body.js?v=2'
+import './body.js?v=2'
+import './charts.js?v=2'
+import './storage.js?v=2'
+import { getEntries } from './storage.js?v=2'
+import './spaceweather.js?v=2'
+import './dashboard.js?v=2'
+import './header.js?v=2'
+import { renderCards } from './dashboard.js?v=2'
 
 
 // Get the saved list made in form
@@ -22,7 +22,7 @@ const latest = entries[entries.length - 1];
 
 
 // Loading call
-console.log('app.js loaded')
+console.log('app.js?v=2 loaded')
 
 // Testing
 console.log(getStatus(indicators[0], { value: 72 }));    // ok

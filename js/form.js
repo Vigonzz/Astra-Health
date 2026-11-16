@@ -1,9 +1,9 @@
-import './header.js'
-import { loadIndicators } from './indicators.js'
-import { getEntries } from './storage.js';
-import { saveEntry } from './storage.js';
+import './header.js?v=2'
+import { loadIndicators } from './indicators.js?v=2'
+import { getEntries } from './storage.js?v=2';
+import { saveEntry } from './storage.js?v=2';
 
-console.log('form.js loaded');
+console.log('form.js?v=2 loaded');
 
 // Load the indicators
 const indicators = await loadIndicators();

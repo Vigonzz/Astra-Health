@@ -124,6 +124,10 @@ button[type="submit"], #zone-close {
     gap: 0.5rem;
 }
 
+#health-btn {
+    border-radius: 8px;
+}
+
 label { 
     color: var(--text-soft); 
 }
