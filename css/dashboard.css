@@ -1,0 +1,111 @@
+#dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+    background: var(--bg-dark);
+    color: var(--text);
+    font: inherit;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.status-ok {
+    border-left:6px solid var(--status-ok) ;
+}
+
+.status-warn {
+    border-left:6px solid var(--status-warn) ;
+}
+
+.status-alert {
+    border-left:6px solid var(--status-alert) ;
+}
+
+.card-name {
+    color: var(--text-soft);
+}
+
+.card-value {
+    font-size: 1.5rem;
+    color: #FDCEFE;
+}
+
+.card-status {
+    font-size: 0.9rem;
+}
+
+.status-ok .card-status {
+    color: var(--status-ok);
+}
+
+.status-warn .card-status {
+    color: var(--status-warn);
+}
+.status-alert .card-status {
+    color: var(--status-alert);
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: scale(1.03, 1.03) translateY(-2px);
+    box-shadow: 0 0 12px var(--accent);
+}
+
+#dash {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.body-wrap {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.body-wrap img {
+    width: 100%;
+    display: block;
+}
+
+.zone {
+    position: absolute;
+    width: 8%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.zone[data-zone="head"]    { left: 49%; top: 15%; }
+.zone[data-zone="heart"]   { left: 56%; top: 44%; }
+.zone[data-zone="abdomen"] { left: 49%; top: 52%; }
+.zone[data-zone="arm"]     { left: 19%; top: 46%; }
+
+.dash-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    .dash-layout { grid-template-columns: 1fr; }
+}
+

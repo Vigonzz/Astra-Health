@@ -7,7 +7,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/dashboard.css">
         <link rel="icon" href="data:,"
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
     </head>
     <body> 
@@ -21,13 +25,24 @@
                     <li><a href="form.html">Health Form</a></li>
                 </ul>
             </nav>
-            Welcome,<span id="astronaut-name"></span>
+            <div class="welcome-head">
+                Welcome, <span id="astronaut-name"></span>
+            </div>
         </header>
         <main>
-            <div id="body-figure"></div>
-
-            <div id="dashboard"></div>
-
+            <h2 id="dash">Health Dashboard</h2>
+            <div class="body-wrap">
+                <img alt="Figure of a body (outline)" src="./assets/body.png">
+                <button class="zone" data-zone="head" aria-label="Head: sleep and mood"></button>
+                <button class="zone" data-zone="heart" aria-label="Heart: heart rate and blood pressure"></button>
+                <button class="zone" data-zone="abdomen" aria-label="Abdomen: blood glucose"></button>
+                <button class="zone" data-zone="arm" aria-label="Arm: body temperature"></button>
+            </div>
+            <div class="dash-layout">
+                <div id="dashboard"></div>
+                <div id="body-figure"></div>
+            </div>
+            
             <div id="detail-panel"></div>
 
             <div id="space-weather"></div>

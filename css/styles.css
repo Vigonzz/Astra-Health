@@ -2,6 +2,50 @@
     --status-ok: #1cfc03;
     --status-warn: #fcd303;
     --status-alert: #fc0324;
+    --bg-dark: #02071B;
+    --bg-purple: #2A0F62;
+    --border: #603AAE;
+    --accent: #B096E9;
+    --text: #fff;
+    --text-soft: #FDCEFE;
+}
+
+body {
+    margin: 0;
+    font-family: "Intel One Mono", monospace;
+    color: var(--text);
+    background: linear-gradient(var(--bg-purple), #121212, var(--bg-purple));
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background: var(--bg-dark);
+    max-height: 120px;
+    
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.welcome-head {
+    margin-left: auto;
+}
+
+button, input, textarea, select {
+    font: inherit;
 }
 
 #body-figure {
