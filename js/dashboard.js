@@ -1,6 +1,6 @@
-import {getStatus} from './indicators.js?v=2'
+import {getStatus} from './indicators.js?v=3'
 
-console.log('dashboard.js?v=2 loaded')
+console.log('dashboard.js?v=3 loaded')
 
 export function renderCards(indicators, readings) {
 

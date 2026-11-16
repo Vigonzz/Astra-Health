@@ -1,6 +1,6 @@
-import { getStatus } from "./indicators.js?v=2"
+import { getStatus } from "./indicators.js?v=3"
 
-console.log('body.js?v=2 loaded')
+console.log('body.js?v=3 loaded')
 
 export function colorZones(indicators, readings) {
     const zones = document.querySelectorAll('.zone');

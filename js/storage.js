@@ -1,4 +1,4 @@
-console.log('storage.js?v=2 loaded')
+console.log('storage.js?v=3 loaded')
 
 // Gives back the list of all saved entries
 export function getEntries() {

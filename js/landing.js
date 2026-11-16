@@ -1,5 +1,5 @@
-import './header.js?v=2'
-console.log('landing.js?v=2 loaded')
+import './header.js?v=3'
+console.log('landing.js?v=3 loaded')
 
 // Grabbing necessary elements
 const callsign = document.getElementById('callsign');
